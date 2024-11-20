@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
   
-
+ *{
+    color: #fff;
+ }
 body{
-    background: linear-gradient(to right, rgba(0, 0, 0, 1) 20%, rgba(230, 13, 13, 0.884));
+    /* background: linear-gradient(to right, rgba(0, 0, 0, 1) 20%, rgba(230, 13, 13, 0.884)); */
+    background-color: black;
+  }
+
+  #taskList::-webkit-scrollbar{
+   display: none;
   }
