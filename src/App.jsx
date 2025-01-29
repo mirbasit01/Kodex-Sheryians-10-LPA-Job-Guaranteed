@@ -40,6 +40,8 @@ import AdmineDashbord from './components/Dashbord/AdmineDashbord'
 import { AuthContext } from './contex/AuthProvider'
 import { jsxs } from 'react/jsx-runtime'
 import { data } from 'autoprefixer'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Don't forget to import the CSS for styling
 
 
 function App() {
@@ -79,7 +81,7 @@ function App() {
     }
    }
     else{
-    alert('Invalid Credentials')
+    toast('Invalid Credentials')
    }
   }
   // handelLogin('user@me.com',123);
@@ -97,17 +99,33 @@ function App() {
   
   return (
      <>
+        <ToastContainer
+        autoClose={5000}
+        style={{ fontSize: 12, fontWeight: 300 }}
+        theme="light"
+        position="top-right"
+      />
      {/* ager user mt ha matlb user khali ha to print krwaodo login */}
  {/* {!user ? <Login handelLogin={handelLogin}/>: ''}
      {user == 'admin' ? <AdmineDashbord/> : <EmployDashbord/>} */}
-           {/* Show login page if no user is logged in */}
-     {!user && <Login handelLogin={handelLogin} />}
-           {/* Show Admin dashboard if logged in as admin */}
-      {user === 'admin' && <AdmineDashbord  changUser={setUser} />}
-      {/* handleLogout={handleLogout} */}
-            {/* Show Employee dashboard if logged in as employee */}
-      {user === 'employee' && <EmployDashbord  changUser={setUser} data={loggedInUserData }  />}
-      {/* handleLogout={handleLogout} */}
+          {/* Show login page if no user is logged in */}
+            {!user && <Login handelLogin={handelLogin} />}
+               {/* Show Admin dashboard if logged in as admin */}
+             {user === 'admin' && (
+               <>
+              {toast.success("Welcome Admin!")}
+              <AdmineDashbord changUser={setUser} />
+               </>
+             )}
+             {/* handleLogout={handleLogout} */}
+                {/* Show Employee dashboard if logged in as employee */}
+             {user === 'employee' && (
+               <>
+              {toast.success("Welcome Employee!")}
+              <EmployDashbord changUser={setUser} data={loggedInUserData} />
+               </>
+             )}
+             {/* handleLogout={handleLogout} */}
      </>
   )
 }

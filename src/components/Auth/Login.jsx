@@ -7,16 +7,34 @@ function Login({handelLogin}) {
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     
+
+
+
+    //   two wat bindings jab  yh fome h 
+//  const  submitHandler = (e)=>{
+//     e.preventDefault()
+//     handelLogin(email, password)
+//     console.log("Email is ", email)
+//     console.log('password is ', password)
+//     // clear inputs after form submission
+//    setemail("")
+//     setpassword("")
+//  }
 //   two wat bindings jab  yh fome h 
- const  submitHandler = (e)=>{
-    e.preventDefault()
-    handelLogin(email, password)
-    console.log("Email is ", email)
-    console.log('password is ', password)
-    // clear inputs after form submission
-   setemail("")
-    setpassword("")
- }
+const submitHandler = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+        // Show error toast if email or password is empty
+        alert("Email and password fields cannot be empty");
+        return;
+    }
+    handelLogin(email, password);
+    console.log("Email is ", email);
+    console.log('Password is ', password);
+    // Clear inputs after form submission
+    setemail("");
+    setpassword("");
+}
   return (
 
     <div className='flex h-screen w-screen items-center justify-center' >
@@ -31,8 +49,7 @@ function Login({handelLogin}) {
             onChange={(e)=>{
                 setemail(e.target.value)
             }}
-             required
-              className='outline-none bg-transparent border-2 border-emerald-600
+               className='outline-none bg-transparent border-2 border-emerald-600
              text-xl py-3 px-5 rounded-full placeholder:text-gray-400' type="email" placeholder='Enter your Email ' 
              />
             <input 
@@ -40,8 +57,7 @@ function Login({handelLogin}) {
             onChange={(e)=>{
                 setpassword(e.target.value)
             }}
-            required 
-            className='outline-none bg-transparent border-2 border-emerald-600 
+             className='outline-none bg-transparent border-2 border-emerald-600 
             text-xl py-3 px-5 rounded-full placeholder:text-gray-400 mt-3' type="password" placeholder='Enter password' 
             />
             <button className='outline-none my-5 w-[267px] border-none bg-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-white font-bold'>Log in</button>

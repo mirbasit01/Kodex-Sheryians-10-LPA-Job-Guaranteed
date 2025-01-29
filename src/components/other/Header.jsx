@@ -1,9 +1,10 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 
 const Header = (props) => {
 
   const LogoutUser = () => {
-
+    toast.success('Logged Out Successfully')
     localStorage.setItem('loggedInUser', '')
     props.changUser('')
           
