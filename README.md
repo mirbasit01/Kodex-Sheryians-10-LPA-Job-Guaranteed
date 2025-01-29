@@ -61,6 +61,7 @@ Admin Controls: Discover how to implement features that give admins full control
 React Components: Understand how to structure your app into reusable components.
 State Management: Learn about managing state for both users and tasks effectively.
 Screenshots:
- ![image](https://github.com/user-attachments/assets/c460cb50-5ae4-4a7f-b07c-87f7a10aead2)
-![image](https://github.com/user-attachments/assets/899733fc-ffdb-436c-89ce-05ba24b1984b)
-![image](https://github.com/user-attachments/assets/fa56fe08-94af-426e-98f5-1b4a3893c842)
+ ![Screenshot 2025-01-29 184016](https://github.com/user-attachments/assets/6aed1cce-565f-4cc0-8fdb-9aeb9c65bcb1)
+![Screenshot 2025-01-29 184143](https://github.com/user-attachments/assets/a7ffe081-d5ca-48e3-9f43-b3ae9c93cb16)
+![Screenshot 2025-01-29 184049](https://github.com/user-attachments/assets/e8cdf278-67d5-4bd9-9a62-fed037bd796f)
+
